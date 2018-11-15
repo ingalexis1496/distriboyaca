@@ -1,0 +1,25 @@
+﻿body{
+  display:flex;
+  min-height:100vh;
+  flex-direction:column;
+}
+
+main{
+  flex:1 0 auto;
+}
+
+#fondoRegistrarse{
+  background-image:url("../../Img/fondoRegistrarse.jpg");
+  background-repeat:no-repeat;
+  background-position:left center;
+  background-size:cover;
+  height:600px;
+}
+
+#fondoLogin{
+  background-image:url("../../Img/fondoLogin.jpg");
+  background-repeat:no-repeat;
+  background-position:left center;
+  background-size:cover;
+  height:590px;
+}

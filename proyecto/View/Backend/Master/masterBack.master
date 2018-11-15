@@ -1,0 +1,115 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="~/Controller/Backend/masterBack.master.cs" Inherits="View_Backend_Master_masterBack" %>
+
+<!DOCTYPE html>
+
+<html>
+
+  <head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0"/>
+    <title>Pendiente</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link href="../../../App_Themes/Css/materialize.min.css" rel="stylesheet"/>
+    <link href="../../../App_Themes/Css/estilosBack.css" rel="stylesheet"/>
+    <asp:ContentPlaceHolder id="head" runat="server"></asp:ContentPlaceHolder>
+  </head>
+
+  <body>
+
+    <form id="form1" runat="server">
+
+      <header>
+        <nav class="black">
+          <div class="nav-wrapper">
+            <div style="padding-left:20px">
+              <asp:Label ID="rolL" CssClass="brand-logo" runat="server"></asp:Label>
+            </div>
+            <a class="button-collapse" data-activates="slide-out" href="#"><i class="material-icons">menu</i></a>
+            <ul class="hide-on-med-and-down right">
+              <li><asp:LinkButton ID="sesionLB" CssClass="dropdown-button" data-activates="dropdown1" runat="server"><i class="material-icons left">power_settings_new</i>Mas opciones</asp:LinkButton></li>
+            </ul>
+            <ul id="dropdown1" class="dropdown-content">
+              <li><asp:LinkButton ID="InicioLB" runat="server" OnClick="InicioLB_Click">Inicio</asp:LinkButton></li>
+              <li><asp:LinkButton ID="cerrarSesionLB" runat="server" OnClick="cerrarSesionLB_Click">Cerrar sesion</asp:LinkButton></li>
+            </ul>
+            <ul id="slide-out" class="side-nav fixed">
+              <li>
+                <div class="user-view">
+                  <div class="background">
+                    <asp:Image ID="fondoNav" ImageUrl="~/Img/fondoNav.jpg" runat="server"/>
+                  </div>
+                  <asp:Image ID="fotoUsuarioI" CssClass="circle" runat="server" ImageUrl="~/Img/Octocat.jpg"/>
+                  <asp:Label ID="nombreUsuarioL" CssClass="name" runat="server"></asp:Label>
+                  <asp:Label ID="correoUsuarioL" CssClass="email" runat="server"></asp:Label>
+                </div> 
+              </li>
+              <li>
+                <ul class="collapsible black-text" data-collapsible="accordion">
+                  <li id="menuAdministrador" runat="server">
+                    <div class="collapsible-header waves-effect waves-yellow"><i class="material-icons left">person_add</i>Administrador</div>
+                    <div class="collapsible-body center-align">
+                          <asp:LinkButton ID="registrarAdministradorLB" CssClass="black-text" runat="server" OnClick="registrarAdministradorLB_Click">Registrar administrador</asp:LinkButton>
+                        <asp:LinkButton ID="modificarAdministrador" CssClass="black-text" runat="server" OnClick="modificarAdministrador_Click">Mofificar administrador</asp:LinkButton>
+                      <asp:LinkButton ID="buscarAdministradorLB" CssClass="black-text" runat="server">Buscar administrador</asp:LinkButton>
+                      <asp:LinkButton ID="Listar_usuarios" CssClass="black-text" runat="server" OnClick ="Listar_usuarios_Click">Visualizar Administrador</asp:LinkButton>
+                         <asp:LinkButton ID="BloquearUsuario" CssClass="black-text" runat="server" OnClick="BloquearUsuario_Click">Bloquear usuario</asp:LinkButton>
+                    </div> 
+                  </li>
+                  <li id="menuEmpleado" runat="server">
+                    <div class="collapsible-header waves-effect waves-yellow"><i class="material-icons left">person_add</i>Empleado</div>
+                    <div class="collapsible-body">
+                      <asp:LinkButton ID="RegistrarEmpleadoLB" CssClass="black-text" runat="server" OnClick="RegistrarEmpleadoLB_Click">Registrar</asp:LinkButton>
+                         <asp:LinkButton ID="ModificarEmpleadoLB" CssClass="black-text" OnClick="ModificarEmpleadoLB_Click" runat="server">Modificar Empleado</asp:LinkButton>
+                        <asp:LinkButton ID="BloquearEmpleadoLB" CssClass="black-text" OnClick="BloquearEmpleadoLB_Click" runat="server">Bloquear Empleado</asp:LinkButton>
+                      <asp:LinkButton ID="BuscarEmpleadoLB" CssClass="black-text" runat="server">Buscar Empleado </asp:LinkButton>
+                      <asp:LinkButton ID="VisualizarEmpleado" CssClass="black-text" OnClick="VisualizarEmpleado_Click" runat="server">Visualizar Empleado</asp:LinkButton>
+                        <asp:LinkButton ID="ReporteEmpleadosLB" CssClass="black-text" OnClick="ReporteEmpleadosLB_Click" runat="server">Reporte Empleados</asp:LinkButton>
+                         <asp:LinkButton ID="ReporteCerticicadoLB" CssClass="black-text" OnClick="ReporteCerticicadoLB_Click" runat="server">Certificación Laboral</asp:LinkButton>
+                    </div>
+                  </li>
+                  <li id="menuProveedor" runat="server">
+                    <div class="collapsible-header waves-effect waves-yellow"><i class="material-icons left">card_travel</i>Proveedor</div>
+                    <div class="collapsible-body">
+                      <asp:LinkButton ID="LinkButton7" CssClass="black-text" runat="server">Registrar</asp:LinkButton>
+                      <asp:LinkButton ID="LinkButton8" CssClass="black-text" runat="server">Buscar</asp:LinkButton>
+                      <asp:LinkButton ID="LinkButton9" CssClass="black-text" runat="server">visualizar</asp:LinkButton>
+                    </div>
+                  </li>
+                  <li id="menuMaterial" runat="server">
+                    <div class="collapsible-header waves-effect waves-yellow"><i class="material-icons left">settings_input_composite</i>Material</div>
+                    <div class="collapsible-body">
+                      <asp:LinkButton ID="LinkButton10" CssClass="black-text" runat="server">  Registrar Material</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton1" CssClass="black-text" runat="server"> Modificar Material</asp:LinkButton>
+                         <asp:LinkButton ID="LinkButton2" CssClass="black-text" runat="server">Eliminar Material</asp:LinkButton>
+                      <asp:LinkButton ID="LinkButton12" CssClass="black-text" runat="server">  visualizar Material</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton11" CssClass="black-text" runat="server">Buscar Material</asp:LinkButton>
+                    </div>
+                  </li>
+                  <li id="menuProductos" runat="server">
+                    <div class="collapsible-header waves-effect waves-yellow"><i class="material-icons left">local_drink</i>Producto</div>
+                    <div class="collapsible-body">
+                      <asp:LinkButton ID="RegistrarPrductoLB" CssClass="black-text"  OnClick="RegistrarPrductoLB_Click" runat="server">    Registrar Producto</asp:LinkButton>
+                      <asp:LinkButton ID="ModificarProductoLB" CssClass="black-text" OnClick="ModificarProductoLB_Click" runat="server">   Modificar Producto</asp:LinkButton>
+                      <asp:LinkButton ID="EliminarProductoLB" CssClass="black-text"  OnClick="EliminarProductoLB_Click" runat="server">    Eliminar  Producto</asp:LinkButton>
+                      <asp:LinkButton ID="BuscarProductoLB" CssClass="black-text"    OnClick="BuscarProductoLB_Click" runat="server">      Buscar    Producto</asp:LinkButton>
+                      <asp:LinkButton ID="VisualizarProductoLB" CssClass="black-text" OnClick="VisualizarProductoLB_Click" runat="server"> visualizar Producto</asp:LinkButton>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <section>
+        <div><asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder></div>
+      </section>
+      <footer></footer>
+    </form>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../../../App_Themes/Js/materialize.min.js"></script>
+    <script type="text/javascript" src="../../../App_Themes/Js/appBack.js"></script>
+  </body>
+
+</html>

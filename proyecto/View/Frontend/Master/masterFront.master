@@ -1,0 +1,84 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="~/Controller/Frontend/masterFront.master.cs" Inherits="View_Frontend_Master_masterFront" %>
+
+<!DOCTYPE html>
+
+<html>
+
+  <head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0"/>
+    <title>.::DISTRIBOYACA::.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link href="../../../App_Themes/Css/materialize.min.css" rel="stylesheet"/>
+    <link href="../../../App_Themes/Css/estilosFront.css" rel="stylesheet"/>
+    <asp:ContentPlaceHolder id="head" runat="server"></asp:ContentPlaceHolder>
+  </head>
+
+  <body>
+
+    <form id="form1" runat="server">
+      <header>
+        <nav class="black">
+          <div class="nav-wrapper">
+            <a class="brand-logo" href="index.aspx">DISTRIBOYACA</a>
+            <a class="button-collapse" data-activates="slide-out" href="#"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+              <li><a href="index.aspx"><i class="material-icons left">home</i>Inicio</a></li>
+              <li><a href="#"><i class="material-icons left">location_on</i>Contactenos</a></li>
+              <li><a href="#"><i class="material-icons left">shopping_cart</i>Tienda virtual</a></li>
+              <li><asp:LinkButton ID="registrarseLB" runat="server" OnClick="registrarseLB_Click"><i class="material-icons left">person_add</i>Registrarse</asp:LinkButton></li>
+              <li><asp:LinkButton ID="iniciarSesionLB" runat="server" OnClick="iniciarSesionLB_Click"><i class="material-icons left">person</i>Iniciar sesion</asp:LinkButton></li>
+              <li><asp:LinkButton ID="sesionLB" CssClass="dropdown-button" data-activates="dropdown1" Visible="false" runat="server"></asp:LinkButton></li>
+              <ul id="dropdown1" class="dropdown-content">
+                <li><asp:LinkButton ID="perfilLB" runat="server" OnClick="perfilLB_Click"><i class="material-icons left">person</i>Perfil</asp:LinkButton></li>
+                <li><asp:LinkButton ID="cerrarSesionLB" runat="server" OnClick="cerrarSesionLB_Click"><i class="material-icons left">power_settings_new</i>Cerrar sesion</asp:LinkButton></li>
+              </ul>
+            </ul>
+            <ul id="slide-out" class="side-nav">
+              <li><a href="index.aspx"><i class="material-icons left">home</i>Inicio</a></li>
+              <li><a href="#"><i class="material-icons left">location_on</i>Contactenos</a></li>
+              <li><a href="#"><i class="material-icons left">shopping_cart</i>Tienda virtual</a></li>
+              <li><asp:LinkButton ID="registrarseLBO" runat="server" OnClick="registrarseLBO_Click"><i class="material-icons left">person_add</i>Registrarse</asp:LinkButton></li>
+              <li><asp:LinkButton ID="iniciarSesionLBO" runat="server" OnClick="iniciarSesionLBO_Click"><i class="material-icons left">person</i>Iniciar sesion</asp:LinkButton></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <section>
+        <div><asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder></div>
+      </section>
+      <footer class="page-footer black">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text">Integrantes</h5>
+              <p class="grey-text text-lighten-4">
+                Julian Esteban Garcia Pedraza<br/>
+                Wilson Alexis Gonzalez Puentes
+              </p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+              <h5 class="white-text">Redes sociales</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="#">Facebook</a></li>
+                <li><a class="grey-text text-lighten-3" href="#">Instagram</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+             © 2018 Universidad Cundinamarca
+             <a class="grey-text text-lighten-4 right" href="#">Pagina oficial</a>
+          </div>
+        </div>
+      </footer>
+    </form>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../../../App_Themes/Js/materialize.min.js"></script>
+    <script type="text/javascript" src="../../../App_Themes/Js/appFront.js"></script>
+
+  </body>
+
+</html>
